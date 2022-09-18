@@ -1,0 +1,29 @@
+/* *{
+
+} */
+
+.nav{
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 25% 0 0;
+    width: 100%;
+    color: white;
+    /* position: fixed; */
+
+}
+
+.logo{
+    width: 60px;
+    margin-left: 1rem;
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    margin-right: 0;
+    gap: 1rem;
+    padding: 2rem;
+}
+
