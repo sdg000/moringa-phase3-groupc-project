@@ -25,8 +25,8 @@ function MainComponent(){
     return(
         <div className="task">
             <ul id="tasks">
-                <li onClick={onClick}>REGISTER STUDENT</li>
-                <li>GRADE SUBJECT</li>
+                <li> <a href="/register-students">REGISTER STUDENT</a> </li>
+                <li><a href="/grade-subject">GRADE SUBJECT</a></li>
                 <li>VIEW STUDENT GRADE</li>
             </ul>
 

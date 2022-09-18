@@ -1,20 +1,33 @@
-import React, {useState} from 'react';
-import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import Nav from './component/nav/Nav';
-import MainComponent from "./component/maincontert/MainComponent"
+import React, {useState} from "react";
+import { BrowserRoute, Routes, Route } from "react-router-dom";
+import "./App.css";
+import MainComponent from "./components/MainContent/MainComponent";
+import Navbar from "./components/navbar/Navbar";
+import RegStudent from "./components/RegStudent/RegStudent";
+import CreateGrade from "./components/CreateGrade/CreateGrade"
 
 function App() {
+  const [createStudentResults, setCreateStudentResults] = useState([])
 
+  // pass createStudentResults to <ShowStudent/> component
 
   return (
     <div className="App">
-      <Nav/>
-      <Routes>
-        <Route exact path='/' element={<MainComponent/>}>
+      <Navbar />
+        <Routes>
+          <Route exact path="/" element={<MainComponent/>}>
 
-        </Route>
-      </Routes>
+          </Route>
+          <Route path="/register-students" element={<RegStudent setCreateStudentResults={setCreateStudentResults}/>}>
+
+          </Route>
+          <Route path="//grade-subject" element={<CreateGrade/>}>
+
+          </Route>
+
+          
+
+        </Routes>
     </div>
   );
 }
