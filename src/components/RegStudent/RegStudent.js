@@ -28,11 +28,9 @@ function RegStudent({setCreateStudentResults}){
         fetch("http://localhost:9292/create-student", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                FormData
-            }),
+            body: JSON.stringify(formdata),
         })
         .then(function(response){
             return response.json()
@@ -65,9 +63,9 @@ function RegStudent({setCreateStudentResults}){
             <br/>
             <label>Course id: </label>
             <select value={courseId} onChange={(e) => setCourseId(e.target.value)}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
             </select>
             <br/>
             <label>Index number: </label>
