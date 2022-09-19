@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { links } from "./data";
 import "./Navbar.css";
-import Image_logo from "../../logo.svg";
+import Image_logo from "../../logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 function Navbar() {

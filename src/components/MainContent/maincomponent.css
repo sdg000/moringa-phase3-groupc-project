@@ -1,24 +1,21 @@
-*{
-    /* background-color: aliceblue; */
-
-}
-.task{
-    display: flex;
-    justify-content: center;
-    /* background-color: aliceblue; */
-
-
+.task {
+  display: flex;
+  justify-content: center;
+  /* background-color: aliceblue; */
 }
 
-#tasks{
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-    margin: 1rem;
+#tasks {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 1rem;
 }
 
-#tasks > li{
-    border: 1px solid red;
+#tasks > li {
+  border: 1px solid var(--clr-grey-1);
+  padding: 0.5rem;
+}
 
-
+.task > p {
+  display: block;
 }
