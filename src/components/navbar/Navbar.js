@@ -25,7 +25,10 @@ function Navbar() {
     <nav>
       <div className="nav-center">
         <div className="nav-header">
-          <img link="/" src={Image_logo} className="logo" alt="logo" />
+          <Link to="/">
+            <img src={Image_logo} className="logo" alt="logo" />
+          </Link>
+
           <button className="nav-toggle" onClick={toggleLinks}>
             <GiHamburgerMenu />
           </button>
@@ -34,21 +37,21 @@ function Navbar() {
         </div>
         <div className="links-container" ref={linksContainerRef}>
           <ul className="links" ref={linksRef}>
-            {links.map((link) => {
+            {/* {links.map((link) => {
               const { id, url, text } = link;
               return (
                 <li key={id}>
                   <a to={url}>{text}</a>
                 </li>
               );
-            })}
-            {/* {links.map(({ url, text }, id) => {
+            })} */}
+            {links.map(({ url, text }, id) => {
               return (
                 <li>
                   <NavLink to={url}>{text}</NavLink>
                 </li>
               );
-            })} */}
+            })}
           </ul>
         </div>
       </div>
