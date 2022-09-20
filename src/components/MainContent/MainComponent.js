@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import "./maincomponent.css";
+import DisplayStudent from "../DisplayStudent/DisplayStudent";
+
 
 function MainComponent() {
   function onClick() {
@@ -34,6 +36,7 @@ function MainComponent() {
         </ul>
       </div>
       <p>Display stuff here</p>
+      <DisplayStudent/>
     </>
   );
 }
