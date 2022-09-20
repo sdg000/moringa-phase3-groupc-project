@@ -4,7 +4,7 @@ import "./App.css";
 import MainComponent from "./components/MainContent/MainComponent";
 import Navbar from "./components/navbar/Navbar";
 import RegStudent from "./components/RegStudent/RegStudent";
-import CreateGrade from "./components/CreateGrade/CreateGrade"
+import CreateGrade from "./components/CreateGrade/CreateGrade";
 
 function App() {
   // contain all student Instances

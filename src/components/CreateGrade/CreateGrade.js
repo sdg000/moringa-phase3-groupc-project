@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from "react";
+import "./CreateGrade.css";
+
 
 // takes in all student's data as prop from <Apps/>
 function CreateGrade({students}){
@@ -59,7 +61,7 @@ function CreateGrade({students}){
 
     return(
         <form onSubmit={submitGrade}>
-            <h1>SUBJECT GRADING FORM</h1>
+            <h2>SUBJECT GRADING FORM</h2>
             <br/>
             <label>Academic Year: </label>
             <select type="integer" value={academic_year} onChange={(e) => setAcademic_year(e.target.value)}>
@@ -99,9 +101,9 @@ function CreateGrade({students}){
             <label>Exams score: </label>
             <input type="integer"  value={exams_score} placeholder="enter exams_score" onChange={(e) => setExamsScore(e.target.value)}/>
             <br/>
-            <input type="submit" value="Grade" />
+            <input className="grade__btn" type="submit" value="Grade Subject" />
         </form>
     )
 
 }
-export default CreateGrade
+export default CreateGrade;
