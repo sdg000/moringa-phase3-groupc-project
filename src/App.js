@@ -5,12 +5,17 @@ import MainComponent from "./components/MainContent/MainComponent";
 import Navbar from "./components/navbar/Navbar";
 import RegStudent from "./components/RegStudent/RegStudent";
 import CreateGrade from "./components/CreateGrade/CreateGrade";
+import GetStudentResults from "./components/GetStudentResults/GetStudentResults"
 
 function App() {
   // contain all student Instances
   const [students, setStudents] = useState([])
 
+  //contain all student Instances
   const [createStudentResults, setCreateStudentResults] = useState([])
+
+  // conntains student results fetched by <GetStudentResults/> to be passed to <DisplayStudent/> to display student's term results.
+  const [studentTermResults, setStudentTermResults ] = useState([])
 
   
 
@@ -43,6 +48,11 @@ function App() {
 
           <Route path="/grade-subject" element={<CreateGrade students={students}/>}>
           </Route>
+
+          <Route path="/student-term-results" element={<GetStudentResults setStudentTermResults={setStudentTermResults}/>}>
+          </Route>
+
+
 
 
 

@@ -30,7 +30,7 @@ function MainComponent() {
           <li>
             <a href="/grade-subject">GRADE SUBJECT</a>
           </li>
-          <li>VIEW STUDENT GRADE</li>
+          <li><a href="/student-term-results">VIEW STUDENT GRADE</a></li>
         </ul>
       </div>
       <p>Display stuff here</p>
