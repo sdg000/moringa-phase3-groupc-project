@@ -1,27 +1,16 @@
 import React, {useState, useEffect} from "react";
 import "./GetStudentResults.css";
+import { useNavigate } from "react-router-dom";
 
 
 // takes in all student's data as prop from <Apps/>
 function GetStudentResults({setStudentTermResults}){
+    let navigate = useNavigate()
     const [academic_year, setAcademic_year] = useState("")
     const [term, setTerm] = useState("")
     const [index_no, setIndexNo] = useState("")
     const [level, setLevel] = useState("")
 
-    // function to find student's subjects and prefill subject_id form
-    // function getSubjects(index){
-    //     setIndexNo(index)
-    //     let student = students.find(item => item.index_no === parseInt(index))
-        
-    //        let subjectLists = student.subjects.map((item) =>{
-    //             return(
-    //                 <option key={item.id}>{item.subject_name}</option>
-    //             )
-    //         })
-    //         setSubjects(subjectLists)
-        
-    // }
 
     // function to post grade to server
     function submitGrade(e){
@@ -46,9 +35,20 @@ function GetStudentResults({setStudentTermResults}){
         .then(function(data){
             console.log(data)
             setStudentTermResults(data)
+            if (data){
+                // return <Navigate to="/boom" replace={true}/>
+                let index = data.find(i => i.index_no === parseInt(index_no))
+                // console.log(index)
+                // console.log(index.index_no)
+                navigate(`/term-grades/students/${index.index_no}`)
+            }
+    
         })
 
     }
+
+
+
 
 
 
@@ -86,7 +86,7 @@ function GetStudentResults({setStudentTermResults}){
                 <option>3</option>
             </select>
             <br/>
-            <input className="grade__btn" type="submit" value="Find Grades " />
+            <input className="grade__btn" type="submit" value="Find Grades "/>
         </form>
     )
 

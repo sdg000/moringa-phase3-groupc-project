@@ -1,37 +1,53 @@
 import React, {useState, useEffect} from "react";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+
 // import ReactDOM from "react-dom";
 
-function DisplayStudent ()  {
-  const [data, setData] = useState([]);
-  
+function DisplayStudent ({createStudentResults})  {
+  // const [lastStudentCreated, setLastStudentCreated] = useState([]);
 
-  // GET request function to your Mock API
-  const fetchInventory = () => {
-      fetch("http://localhost:9292/create-student")
-          .then(res => res.json())
-          .then(json => setData(json));
+  let navigate = useNavigate()
+
+
+  // component fetches all students, use useParams() to to extract student index number from URL, 
+  // fetch all students from students database
+  // use student index number to find student from students database and display student information
+  // and use to map t
+
+  // let params = useParams()
+  // let student_index = params.index
+  // console.log(typeof student_index)
+
+  
+  // useEffect(() =>{
+  //   fetch("http://localhost:9292/students")
+  //   .then(function(response){
+  //     return response.json()
+  //   })
+  //   .then(function(data){
+
+  //     let student = data.find(item => item.index_no === parseInt(student_index))
+  //     setLastStudentCreated(student)
+  //   })
+  // }, [params])
+
+  // console.log("first call", createStudentResults)
+
+
+
+  // function to handle delete student
+
+
+  // function to handle delete student
+
+  // function to handle create another student
+  function createAnotherStudent(){
+    navigate("/register-students")
   }
-  
-  // Calling the function on component mount
-  useEffect(() => {
-      fetchInventory();
-  }, []);
 
-  // const [data, setData] = useState([]);
-  // fetch("http://localhost:9292/create-student", {
-  //           method: "GET",
-  //           headers: {
-  //               "Content-Type": "application/json",
-  //           },
-  //           body: JSON.stringify(formdata),
-  //       })
-  //       .then(function(response){
-  //           return response.json()
-  //       })
-  //       .then(function(data){
-  //           setDisplayStudent(data)
-  //           console.log(data)
-  //       })
+
     
     return (
         <div className="container">
@@ -50,22 +66,37 @@ function DisplayStudent ()  {
                 </thead>
                 <tbody>
                 {
-                  data.map((item) => (
-                  <tr key={item.id}>
-                    <td>{item.First_name}</td>
-                    <td>{item.Last_name}</td>
-                    <td>{item.Date_of_birth}</td>
-                    <td>{item.Date_admitted}</td>
-                    <td>{item.Course_id}</td>
-                    <td>{item.Index_no}</td>
-                    <td>{item.Level}</td> 
+                  <tr>
+                    <td>{createStudentResults.first_name}</td>
+                    <td>{createStudentResults.last_name}</td>
+                    <td>{createStudentResults.dob}</td>
+                    <td>{createStudentResults.date_admitted}</td>
+                    <td>{createStudentResults.level}</td>
+                    <td>{createStudentResults.course_id}</td>
+                    <td>{createStudentResults.index_no}</td>
                     <td/>
                   </tr>
-                  ))
                 }
                     
                 </tbody>
             </table>
+
+            {/* <ul>{lastStudentCreated}</ul> */}
+            {/* <h3>{lastStudentCreated.first_name}</h3>
+            <h3>{lastStudentCreated.last_name}</h3>
+            <h3>{lastStudentCreated.dob}</h3>
+            <h3>{lastStudentCreated.date_admitted}</h3>
+            <h3>{lastStudentCreated.level}</h3>
+            <h3>{lastStudentCreated.course_id}</h3>
+            <h3>{lastStudentCreated.index_no}</h3> */}
+
+
+            <button>Delete Student</button>{""}
+            <button>Edit Student Information</button>
+            <button onClick={createAnotherStudent}>Register Another Student</button>
+
+
+
         </div>
     );
   }

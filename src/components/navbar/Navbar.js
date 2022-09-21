@@ -33,7 +33,7 @@ function Navbar() {
             <GiHamburgerMenu />
           </button>
 
-          <h3>ABC Students Grading System</h3>
+          <h3>ABC Student Grading System</h3>
         </div>
         <div className="links-container" ref={linksContainerRef}>
           <ul className="links" ref={linksRef}>
@@ -47,7 +47,7 @@ function Navbar() {
             })} */}
             {links.map(({ url, text }, id) => {
               return (
-                <li>
+                <li key={id}>
                   <NavLink to={url}>{text}</NavLink>
                 </li>
               );

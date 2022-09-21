@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import "./maincomponent.css";
-import DisplayStudent from "../DisplayStudent/DisplayStudent";
-
 
 function MainComponent() {
   function onClick() {
@@ -35,8 +33,12 @@ function MainComponent() {
           <li><a href="/student-term-results">VIEW STUDENT GRADE</a></li>
         </ul>
       </div>
-      <p>Display stuff here</p>
-      <DisplayStudent/>
+      <p> INFORMATION ON ABC STUDENT GRADING SYSTEM</p>
+      {/* <p>A Moringa School Software Engineering Project Presentation</p>
+      <p>Phase 3</p>
+      <p>Group C</p> */}
+
+
     </>
   );
 }

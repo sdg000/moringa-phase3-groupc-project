@@ -6,21 +6,27 @@ import Navbar from "./components/navbar/Navbar";
 import RegStudent from "./components/RegStudent/RegStudent";
 import CreateGrade from "./components/CreateGrade/CreateGrade";
 import GetStudentResults from "./components/GetStudentResults/GetStudentResults"
+import DisplayStudent from "./components/DisplayStudent/DisplayStudent";
+import DisplayStudentResults from "./components/DisplayStudentResults/DisplayStudentResults";
 
 function App() {
   // contain all student Instances
   const [students, setStudents] = useState([])
+  const [singleStudentHeader, setSingleStudentHeader] = useState("")
+
 
   //contain all student Instances
   const [createStudentResults, setCreateStudentResults] = useState([])
 
   // conntains student results fetched by <GetStudentResults/> to be passed to <DisplayStudent/> to display student's term results.
   const [studentTermResults, setStudentTermResults ] = useState([])
+  console.log(studentTermResults, "from app")
 
   
 
   // pass createStudentResults to <ShowStudent/> component
-  console.log(createStudentResults, "live in app")
+  // console.log(createStudentResults, "live in app")
+  // let index = `${createStudentResults.index_no}`
 
   //anytime system loads, fetch all Student Instances.
   //use useEffect to load and save all students in app, pass to <CreateGrade/>  to be mapped and provide Student subjects based on their
@@ -43,7 +49,7 @@ function App() {
           <Route exact path="/" element={<MainComponent/>}>
           </Route>
 
-          <Route path="/register-students" element={<RegStudent setCreateStudentResults={setCreateStudentResults}/>}>
+          <Route path="/register-students" element={<RegStudent setCreateStudentResults={setCreateStudentResults} createStudentResults={createStudentResults}/>}>
           </Route>
 
           <Route path="/grade-subject" element={<CreateGrade students={students}/>}>
@@ -51,6 +57,13 @@ function App() {
 
           <Route path="/student-term-results" element={<GetStudentResults setStudentTermResults={setStudentTermResults}/>}>
           </Route>
+
+          <Route path="/students/:index" element={<DisplayStudent createStudentResults={createStudentResults}/>}>
+          </Route>
+
+          <Route path="/term-grades/students/:index" element={<DisplayStudentResults studentTermResults={studentTermResults} />}>
+          </Route>
+
 
 
 
