@@ -35,13 +35,14 @@ function GetStudentResults({setStudentTermResults}){
         })
         .then(function(data){
             console.log(data)
+
+            // send data back to <App/>
             setStudentTermResults(data)
+
+            //extract current student's index_no from results, and use in navigation
             if (data){
                 let index = (data[0].index_no)
-            //     // return <Navigate to="/boom" replace={true}/>
-            //     // let index = data.find(i => i.index_no === index_no)
-                console.log(index)
-            //     // console.log(index.index_no)
+                // console.log(index)
                 navigate(`/term-grades/students/${index}`)
             }
     

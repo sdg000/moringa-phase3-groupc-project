@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 // import ReactDOM from "react-dom";
 
 function DisplayStudent ({createStudentResults})  {
-  // const [lastStudentCreated, setLastStudentCreated] = useState([]);
 
   let navigate = useNavigate()
 

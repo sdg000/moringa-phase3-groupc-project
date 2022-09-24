@@ -12,7 +12,6 @@ import DisplayStudentResults from "./components/DisplayStudentResults/DisplayStu
 function App() {
   // contain all student Instances
   const [students, setStudents] = useState([])
-  const [singleStudentHeader, setSingleStudentHeader] = useState("")
 
 
   //contain all student Instances
