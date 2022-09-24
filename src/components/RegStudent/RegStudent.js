@@ -1,7 +1,5 @@
 import React, {useState} from "react";
-import { GiMetalHand } from "react-icons/gi";
 import "./regstudent.css"
-import DisplayStudent from "../DisplayStudent/DisplayStudent";
 import { useNavigate } from "react-router-dom";
 
 
@@ -55,7 +53,10 @@ function RegStudent({setCreateStudentResults}){
             // window.location.href = `http://localhost:3000/students/${data.index_no}`
 
             setCreateStudentResults(data)
-            navigate(`/students/${data.index_no}`)
+            if (data){
+                navigate(`/students/${data.index_no}`)
+
+            }
 
             // console.log(data)
             // console.log(data.index_no)
