@@ -45,7 +45,7 @@ function CreateGrade({students}){
         }
         console.log(formdata)
         
-        fetch("http://localhost:9292/grade-subject", {
+        fetch("https://glacial-escarpment-22310.herokuapp.com/grade-subject", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

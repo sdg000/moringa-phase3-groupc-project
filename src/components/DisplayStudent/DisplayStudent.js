@@ -11,36 +11,6 @@ function DisplayStudent ({createStudentResults})  {
   let navigate = useNavigate()
 
 
-  // component fetches all students, use useParams() to to extract student index number from URL, 
-  // fetch all students from students database
-  // use student index number to find student from students database and display student information
-  // and use to map t
-
-  // let params = useParams()
-  // let student_index = params.index
-  // console.log(typeof student_index)
-
-  
-  // useEffect(() =>{
-  //   fetch("http://localhost:9292/students")
-  //   .then(function(response){
-  //     return response.json()
-  //   })
-  //   .then(function(data){
-
-  //     let student = data.find(item => item.index_no === parseInt(student_index))
-  //     setLastStudentCreated(student)
-  //   })
-  // }, [params])
-
-  // console.log("first call", createStudentResults)
-
-
-
-  // function to handle delete student
-
-
-  // function to handle delete student
 
   // function to handle create another student
   function createAnotherStudent(){

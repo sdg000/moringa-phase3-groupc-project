@@ -13,15 +13,8 @@ function DisplayStudentResults({studentTermResults}){
     let student_index = parseInt(params.index)
 
     // sending fetch requests to obtain header information on student with student_index
-    const formdata = {
-        index_no: student_index
-    }
 
-    let url = new URL("http://localhost:9292/student")
-    for (let i in formdata) {
-        url.searchParams.append(i, formdata[i])
-    }
-    fetch(url)
+    fetch(`https://glacial-escarpment-22310.herokuapp.com/students/${student_index}`)
     .then(function(response){
         return response.json()
     })
@@ -43,7 +36,6 @@ function DisplayStudentResults({studentTermResults}){
 
     function viewOtherGrades(){
         navigate("/student-term-results")
-
 
     }
 

@@ -16,19 +16,20 @@ function GetStudentResults({setStudentTermResults}){
     function submitGrade(e){
         e.preventDefault()
 
-        const formdata = {
-            academic_year: academic_year,
-            term: term,
-            index_no: index_no,
-            level: level
-        }
-        console.log(formdata)
-        let url = new URL("http://localhost:9292/getstudentgrades")
-        for (let i in formdata) {
-            url.searchParams.append(i, formdata[i])
-        }
+        // const formdata = {
+        //     academic_year: academic_year,
+        //     term: term,
+        //     index_no: index_no,
+        //     level: level
+        // }
+        // console.log(formdata)
+        // let url = new URL("https://glacial-escarpment-22310.herokuapp.com/getstudentgrades")
+        // for (let i in formdata) {
+        //     url.searchParams.append(i, formdata[i])
+        // }
         // console.log(url)
-        fetch(url)
+
+        fetch(`https://glacial-escarpment-22310.herokuapp.com/getstudentgrades/${index_no}/${academic_year}/${level}/${term}`)
         .then(function(response){
             return response.json()
         })
@@ -36,11 +37,12 @@ function GetStudentResults({setStudentTermResults}){
             console.log(data)
             setStudentTermResults(data)
             if (data){
-                // return <Navigate to="/boom" replace={true}/>
-                let index = data.find(i => i.index_no === parseInt(index_no))
-                // console.log(index)
-                // console.log(index.index_no)
-                navigate(`/term-grades/students/${index.index_no}`)
+                let index = (data[0].index_no)
+            //     // return <Navigate to="/boom" replace={true}/>
+            //     // let index = data.find(i => i.index_no === index_no)
+                console.log(index)
+            //     // console.log(index.index_no)
+                navigate(`/term-grades/students/${index}`)
             }
     
         })

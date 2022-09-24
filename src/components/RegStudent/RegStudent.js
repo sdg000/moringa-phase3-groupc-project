@@ -41,7 +41,7 @@ function RegStudent({setCreateStudentResults}){
         }
         console.log(formdata)
         
-        fetch("http://localhost:9292/create-student", {
+        fetch("https://glacial-escarpment-22310.herokuapp.com/create-student", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

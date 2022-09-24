@@ -20,7 +20,7 @@ function App() {
 
   // conntains student results fetched by <GetStudentResults/> to be passed to <DisplayStudent/> to display student's term results.
   const [studentTermResults, setStudentTermResults ] = useState([])
-  console.log(studentTermResults, "from app")
+  // console.log(studentTermResults, "from app")
 
   
 
@@ -31,7 +31,7 @@ function App() {
   //anytime system loads, fetch all Student Instances.
   //use useEffect to load and save all students in app, pass to <CreateGrade/>  to be mapped and provide Student subjects based on their
   useEffect(() =>{
-    fetch("http://localhost:9292/students")
+    fetch("https://glacial-escarpment-22310.herokuapp.com/students")
     .then(function(response){
       return response.json()
     })
@@ -39,8 +39,11 @@ function App() {
       // console.log(data)
       // pass data as props to <CreateGrade/>
       setStudents(data)
+      // console.log(students)
     })
   }, [])
+
+  // console.log(students)
 
   return (
     <div className="App">
